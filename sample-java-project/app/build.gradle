@@ -25,10 +25,11 @@ repositories {
 dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter:5.7.1'
 
-    implementation 'io.rtron:rtron-main:1.2.2'
-    implementation 'io.rtron:rtron-readerwriter:1.2.2'
-    implementation 'io.rtron:rtron-model:1.2.2'
-    implementation 'io.rtron:rtron-io:1.2.2'
+    def rtronVersion = "1.2.2"
+    implementation "io.rtron:rtron-main:$rtronVersion"
+    implementation "io.rtron:rtron-readerwriter:$rtronVersion"
+    implementation "io.rtron:rtron-model:$rtronVersion"
+    implementation "io.rtron:rtron-io:$rtronVersion"
 }
 
 application {
