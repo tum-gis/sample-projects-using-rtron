@@ -45,5 +45,5 @@ jobs:
         with:
           distribution: ${{ matrix.distribution }}
           java-version: ${{ matrix.java }}
-      - name: Build with Gradle
+      - name: Run the project
         run: cd ./sample-java-project && ./gradlew run --args="${PWD}/../datasets/Town01.xodr"
