@@ -1,0 +1,34 @@
+name: Run sample-kts-scripts
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ 'ubuntu-latest' ]
+        java: [ '11', '17' ]
+        distribution: [ 'temurin' ]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2.4.0
+        with:
+          fetch-depth: 0
+      - name: Set up Java
+        uses: actions/setup-java@v2.5.0
+        with:
+          distribution: ${{ matrix.distribution }}
+          java-version: ${{ matrix.java }}
+      - name: Install sdkman
+        run: curl -s "https://get.sdkman.io" | bash
+      - name: Install kotlin
+        run: (source "$HOME/.sdkman/bin/sdkman-init.sh" && sdk install kotlin)
+      - name: Install kscript
+        run: (source "$HOME/.sdkman/bin/sdkman-init.sh" && sdk install kscript)
+      - name: Run convert-opendrive-to-citygml2.kts
+        run: (source "$HOME/.sdkman/bin/sdkman-init.sh" && cd ./sample-kts-scripts && kscript ./convert-opendrive-to-citygml2.kts)
+      - name: Run convert-opendrive-to-citygml3.kts
+        run: (source "$HOME/.sdkman/bin/sdkman-init.sh" && cd ./sample-kts-scripts && kscript ./convert-opendrive-to-citygml3.kts)

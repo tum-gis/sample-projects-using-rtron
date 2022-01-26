@@ -6,11 +6,11 @@ jobs:
   build:
     runs-on: ${{ matrix.os }}
     strategy:
+      fail-fast: false
       matrix:
         os: [ 'ubuntu-latest' ]
-        java: [ '11' ]
+        java: [ '11', '17' ]
         distribution: [ 'temurin' ]
-      fail-fast: false
 
     steps:
       - name: Checkout
@@ -29,11 +29,11 @@ jobs:
     needs: build
     runs-on: ${{ matrix.os }}
     strategy:
+      fail-fast: false
       matrix:
         os: [ 'ubuntu-latest' ]
-        java: [ '11' ]
+        java: [ '11', '17' ]
         distribution: [ 'temurin' ]
-      fail-fast: false
 
     steps:
       - name: Checkout
