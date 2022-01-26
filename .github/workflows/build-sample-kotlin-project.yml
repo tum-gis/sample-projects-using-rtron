@@ -8,8 +8,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ 'ubuntu-latest' ]
-        java: [ '11', '16', '17' ]
+        os: [ 'macos-latest', 'ubuntu-latest', 'windows-latest' ]
+        java: [ '11', '17' ]
         distribution: [ 'temurin' ]
 
     steps:
