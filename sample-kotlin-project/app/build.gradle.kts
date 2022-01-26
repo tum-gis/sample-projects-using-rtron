@@ -27,10 +27,10 @@ dependencies {
     implementation(platform("org.jetbrains.kotlin:kotlin-bom"))
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 
-    implementation("io.rtron:rtron-main:1.2.0")
-    implementation("io.rtron:rtron-readerwriter:1.2.0")
-    implementation("io.rtron:rtron-model:1.2.0")
-    implementation("io.rtron:rtron-io:1.2.0")
+    implementation("io.rtron:rtron-main:1.2.2")
+    implementation("io.rtron:rtron-readerwriter:1.2.2")
+    implementation("io.rtron:rtron-model:1.2.2")
+    implementation("io.rtron:rtron-io:1.2.2")
 
     testImplementation("org.jetbrains.kotlin:kotlin-test")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit")
