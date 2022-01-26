@@ -24,3 +24,25 @@ jobs:
           java-version: ${{ matrix.java }}
       - name: Build with Gradle
         run: cd ./sample-java-project && ./gradlew build
+
+  test-run:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ 'ubuntu-latest' ]
+        java: [ '11' ]
+        distribution: [ 'temurin' ]
+      fail-fast: false
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2.4.0
+        with:
+          fetch-depth: 0
+      - name: Set up Java
+        uses: actions/setup-java@v2.5.0
+        with:
+          distribution: ${{ matrix.distribution }}
+          java-version: ${{ matrix.java }}
+      - name: Build with Gradle
+        run: cd ./sample-java-project && ./gradlew run --args="${PWD}/../datasets/Town01.xodr"
