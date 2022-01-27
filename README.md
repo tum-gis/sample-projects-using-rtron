@@ -1,13 +1,11 @@
-[Maven Central Repository](https://mvnrepository.com/artifact/io.rtron/rtron-main):
-
+[Maven Central Repository](https://mvnrepository.com/artifact/io.rtron/rtron-main):<br />
 <a href="https://github.com/tum-gis/sample-projects-using-rtron/actions/workflows/run-java-project.yml" title="Build Status"><img src="https://img.shields.io/github/workflow/status/tum-gis/sample-projects-using-rtron/Run%20java-project/main?label=java-project&logo=java&style=for-the-badge"></a>
 <a href="https://github.com/tum-gis/sample-projects-using-rtron/actions/workflows/run-kotlin-project.yml" title="Build Status"><img src="https://img.shields.io/github/workflow/status/tum-gis/sample-projects-using-rtron/Run%20kotlin-project/main?label=kotlin-project&logo=kotlin&style=for-the-badge"></a>
-<a href="https://github.com/tum-gis/sample-projects-using-rtron/actions/workflows/run-kts-scripts.yml" title="Run Status"><img src="https://img.shields.io/github/workflow/status/tum-gis/sample-projects-using-rtron/Run%20sample-kts-scripts/main?label=kts-scripts&logo=kotlin&style=for-the-badge"></a>
+<a href="https://github.com/tum-gis/sample-projects-using-rtron/actions/workflows/run-kts-scripts.yml" title="Run Status"><img src="https://img.shields.io/github/workflow/status/tum-gis/sample-projects-using-rtron/Run%20kts-scripts/main?label=kts-scripts&logo=kotlin&style=for-the-badge"></a>
 
-[Jitpack Repository](https://jitpack.io/#tum-gis/rtron):
-
+[Jitpack Repository](https://jitpack.io/#tum-gis/rtron):<br />
 <a href="https://github.com/tum-gis/sample-projects-using-rtron/actions/workflows/run-kotlin-project-jitpack.yml" title="Build Status"><img src="https://img.shields.io/github/workflow/status/tum-gis/sample-projects-using-rtron/Run%20kotlin-project/main?label=kotlin-project-jitpack&logo=kotlin&style=for-the-badge"></a>
-<a href="https://github.com/tum-gis/sample-projects-using-rtron/actions/workflows/run-kts-scripts-jitpack.yml" title="Run Status"><img src="https://img.shields.io/github/workflow/status/tum-gis/sample-projects-using-rtron/Run%20sample-kts-scripts/main?label=kts-scripts-jitpack&logo=kotlin&style=for-the-badge"></a>
+<a href="https://github.com/tum-gis/sample-projects-using-rtron/actions/workflows/run-kts-scripts-jitpack.yml" title="Run Status"><img src="https://img.shields.io/github/workflow/status/tum-gis/sample-projects-using-rtron/Run%20kts-scripts-jitpack/main?label=kts-scripts-jitpack&logo=kotlin&style=for-the-badge"></a>
 
 
 # Sample projects using r:trån as a library
