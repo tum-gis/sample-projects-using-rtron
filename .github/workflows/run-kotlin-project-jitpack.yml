@@ -22,6 +22,8 @@ jobs:
         with:
           distribution: ${{ matrix.distribution }}
           java-version: ${{ matrix.java }}
+      - name: Print dependency tree
+        run: cd ./kotlin-project-jitpack && ./gradlew app:dependencies
       - name: Build with Gradle
         run: cd ./kotlin-project-jitpack && ./gradlew build
       - name: Run the project
