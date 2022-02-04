@@ -22,13 +22,14 @@ plugins {
 repositories {
     mavenCentral()
     maven(url = "https://jitpack.io")
+    maven(url = "https://oss.sonatype.org/content/repositories/snapshots/")
 }
 
 dependencies {
     implementation(platform("org.jetbrains.kotlin:kotlin-bom"))
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 
-    val rtronVersion = "develop-SNAPSHOT"
+    val rtronVersion = "20e959b0f3"
     implementation("com.github.tum-gis.rtron:rtron-main:${rtronVersion}")
     implementation("com.github.tum-gis.rtron:rtron-readerwriter:${rtronVersion}")
     implementation("com.github.tum-gis.rtron:rtron-model:${rtronVersion}")
