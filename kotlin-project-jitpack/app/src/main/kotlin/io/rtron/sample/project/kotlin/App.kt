@@ -16,39 +16,31 @@
 
 package io.rtron.sample.project.kotlin
 
-import io.rtron.readerwriter.opendrive.OpendriveReader
-import io.rtron.readerwriter.opendrive.configuration.OpendriveReaderConfiguration
-import io.rtron.io.files.Path
+import io.rtron.model.opendrive.OpendriveModel
+import io.rtron.readerwriter.opendrive.OpendriveFileReader
+import java.nio.file.Path
+import kotlin.io.path.extension
+import kotlin.io.path.isRegularFile
+
+// import io.rtron.readerwriter.opendrive.OpendriveReader
+// import io.rtron.readerwriter.opendrive.configuration.OpendriveReaderConfiguration
 
 
 fun main(args: Array<String>) {
     require(args.size == 1) { "Expecting exactly one path to an xodr file." }
 
-    val filePath = Path(args.first())
+    val filePath = Path.of(args.first())
     check(filePath.extension == "xodr") { "File must have an xodr extension." }
     check(filePath.isRegularFile()) { "File must exist." }
-
-    val readConfiguration = OpendriveReaderConfiguration(projectId = filePath.fileNameWithoutExtension.toString())
-    val opendriveReader = OpendriveReader(readConfiguration)
-    val opendriveModel = opendriveReader.read(filePath)
+    val opendriveModel: OpendriveModel = OpendriveFileReader.readFromFile(filePath).getOrNull()!!
 
     println("OpenDRIVE dataset at $filePath")
     println("Number of roads: ${opendriveModel.road.size}")
     val lengthOfAllRoads = opendriveModel.road.sumOf { it.length }
     println("Length of all roads: $lengthOfAllRoads")
     println("Number of junctions: ${opendriveModel.junction.size}")
-    println("")
-
-    println("Number of total line elements in plan view: " +
-            opendriveModel.road.flatMap { it.planView.geometry }.count { it.isLine() }.toString())
-    println("Number of total spiral elements in plan view: " +
-            opendriveModel.road.flatMap { it.planView.geometry }.count { it.isSpiral() }.toString())
-    println("Number of total arc elements in plan view: " +
-            opendriveModel.road.flatMap { it.planView.geometry }.count { it.isArc() }.toString())
-    println("Number of total poly3 elements in plan view: " +
-            opendriveModel.road.flatMap { it.planView.geometry }.count { it.isPoly3() }.toString())
-    println("Number of total paramPoly3 elements in plan view: " +
-            opendriveModel.road.flatMap { it.planView.geometry }.count { it.isParamPoly3() }.toString())
+    println("Number of geometry elements in plan view: " +
+            opendriveModel.road.flatMap { it.planView.geometry }.count().toString())
     println("")
 
     val nonUniqueRoadIds = opendriveModel.road.map { it.id }.groupingBy { it }.eachCount().filter { it.value > 1 }

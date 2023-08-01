@@ -15,7 +15,7 @@
  */
 
 plugins {
-    id("org.jetbrains.kotlin.jvm") version "1.5.21"
+    id("org.jetbrains.kotlin.jvm") version "1.9.0"
     application
 }
 
@@ -29,7 +29,9 @@ dependencies {
     implementation(platform("org.jetbrains.kotlin:kotlin-bom"))
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 
-    val rtronVersion = "20e959b0f3"
+    implementation("io.arrow-kt:arrow-core:1.1.5")
+
+    val rtronVersion = "56a5513a0f"
     implementation("com.github.tum-gis.rtron:rtron-main:${rtronVersion}")
     implementation("com.github.tum-gis.rtron:rtron-readerwriter:${rtronVersion}")
     implementation("com.github.tum-gis.rtron:rtron-model:${rtronVersion}")
